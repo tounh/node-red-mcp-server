@@ -58,12 +58,35 @@ node-red-mcp-server
 
 ### Integration with Claude or Other LLMs
 
-1. Start the MCP server:
-   ```bash
-   node-red-mcp-server
+1. Start the MCP server or configure Claude Desktop to start it automatically with the tool configuration below.
+
+2. Configure Claude Desktop:
+   - Open Claude Desktop app
+   - Go to Settings → Advanced → Tool Configuration
+   - Add a new tool configuration:
+   ```json
+   {
+     "node-red": {
+       "command": "node",
+       "args": [
+         "/path/to/node-red-mcp-server/bin/node-red-mcp-server.mjs",
+         "--verbose"
+       ],
+       "env": {
+         "NODE_RED_URL": "http://your-node-red-url:1880",
+         "NODE_RED_TOKEN": "your-token-if-needed",
+         "MCP_SERVER_PORT": "3000"
+       }
+     }
+   }
    ```
-2. Configure your LLM (e.g. Claude) to communicate via stdio using Model Context Protocol.
-3. The LLM can now use the exposed tools to control Node-RED.
+   - Replace `/path/to/node-red-mcp-server` with the actual path to your installation
+   - Update `NODE_RED_URL` to point to your Node-RED instance
+   - Set `NODE_RED_TOKEN` if your Node-RED instance requires authentication
+
+3. After configuration, Claude can interact with your Node-RED instance through the MCP tools.
+
+For more information about the Model Context Protocol, visit the [official MCP documentation](https://modelcontextprotocol.io/introduction).
 
 ### Programmatic Usage
 

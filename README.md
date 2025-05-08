@@ -1,3 +1,7 @@
+[![npm version](https://img.shields.io/npm/v/node-red-mcp-server.svg)](https://www.npmjs.com/package/node-red-mcp-server)
+[![npm downloads](https://img.shields.io/npm/dm/node-red-mcp-server.svg)](https://www.npmjs.com/package/node-red-mcp-server)
+[![GitHub license](https://img.shields.io/github/license/karavaev-evgeniy/node-red-mcp-server.svg)](https://github.com/karavaev-evgeniy/node-red-mcp-server/blob/main/LICENSE)
+
 # node-red-mcp-server
 
 Model Context Protocol (MCP) server for Node-RED — allows language models (like Claude, GPT) to interact with Node-RED through a standardized API.

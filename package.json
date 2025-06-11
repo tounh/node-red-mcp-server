@@ -1,6 +1,6 @@
 {
   "name": "@tounh/node-red-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Model Context Protocol (MCP) server for interacting with Node-RED",
   "license": "MIT",
   "main": "lib/server.mjs",

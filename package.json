@@ -1,6 +1,6 @@
 {
   "name": "@tounh/node-red-mcp-server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Model Context Protocol (MCP) server for interacting with Node-RED",
   "license": "MIT",
   "main": "lib/server.mjs",
@@ -12,7 +12,7 @@
   ],
   "type": "module",
   "bin": {
-    "node-red-mcp-server": "./bin/node-red-mcp-server.mjs"
+    "node-red-mcp-server": "bin/node-red-mcp-server.mjs"
   },
   "scripts": {
     "test": "echo \"No tests yet, but passing for now!\" && exit 0",

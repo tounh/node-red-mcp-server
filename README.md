@@ -105,16 +105,18 @@ node-red-mcp-server
 
     ```json
     {
-      "node-red": {
-        "command": "node",
-        "args": [
-          "/path/to/@tounh/node-red-mcp-server/bin/node-red-mcp-server.mjs",
-          "--verbose"
-        ],
-        "env": {
-          "NODE_RED_URL": "http://your-node-red-url:1880",
-          "NODE_RED_USERNAME": "your-username",
-          "NODE_RED_PASSWORD": "your-password"
+      "mcpServers": {
+        "node-red": {
+          "command": "node",
+          "args": [
+            "/path/to/@tounh/node-red-mcp-server/bin/node-red-mcp-server.mjs",
+            "--verbose"
+          ],
+          "env": {
+            "NODE_RED_URL": "http://your-node-red-url:1880",
+            "NODE_RED_USERNAME": "your-username",
+            "NODE_RED_PASSWORD": "your-password"
+          }
         }
       }
     }
@@ -134,15 +136,18 @@ node-red-mcp-server
 
 ```json
 {
-  "node-red": {
-    "command": "npx",
-    "args": [
-      "@tounh/node-red-mcp-server",
-      "--url", "http://your-node-red-url:1880",
-      "--username", "your-username",
-      "--password", "your-password",
-      "--verbose"
-    ]
+  "mcpServers": {
+    "node-red": {
+      "command": "npx",
+      "args": [
+        "--yes",
+        "@tounh/node-red-mcp-server",
+        "--url", "http://your-node-red-url:1880",
+        "--username", "your-username",
+        "--password", "your-password",
+        "--verbose"
+      ]
+    }
   }
 }
 ```
@@ -153,16 +158,19 @@ node-red-mcp-server
 
 ```json
 {
-  "node-red": {
-    "command": "npx",
-    "args": [
-      "@tounh/node-red-mcp-server",
-      "--verbose"
-    ],
-    "env": {
-      "NODE_RED_URL": "http://your-node-red-url:1880",
-      "NODE_RED_USERNAME": "your-username",
-      "NODE_RED_PASSWORD": "your-password"
+  "mcpServers": {
+    "node-red": {
+      "command": "npx",
+      "args": [
+        "--yes",
+        "@tounh/node-red-mcp-server",
+        "--verbose"
+      ],
+      "env": {
+        "NODE_RED_URL": "http://your-node-red-url:1880",
+        "NODE_RED_USERNAME": "your-username",
+        "NODE_RED_PASSWORD": "your-password"
+      }
     }
   }
 }
@@ -170,6 +178,14 @@ node-red-mcp-server
 
 - `npx` 会自动下载最新版本的包，并在运行后清理，不会污染你的全局环境。
 - 优先推荐使用 `env` 环境变量来配置，更加安全和灵活。
+- `--yes` 参数确保自动确认包安装，无需手动交互。
+
+### 📋 Windows 配置路径
+
+在 Windows 上，Claude Desktop 的配置文件位于：
+```
+%APPDATA%\Claude\claude_desktop_config.json
+```
 
 有关模型上下文协议的更多信息，请访问 [官方 MCP 文档](https://modelcontextprotocol.io/introduction)。
 

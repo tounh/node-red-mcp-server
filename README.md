@@ -1,27 +1,8 @@
 # 🚀 @tounh/node-red-mcp-server
 
-[
-
-
-![NPM 版本](https://img.shields.io/npm/v/@tounh/node-red-mcp-server.svg)
-
-
-](https://www.npmjs.com/package/@tounh/node-red-mcp-server)
-[
-
-
-![NPM 下载量](https://img.shields.io/npm/dm/@tounh/node-red-mcp-server.svg)
-
-
-](https://www.npmjs.com/package/@tounh/node-red-mcp-server)
-[
-
-![GitHub 许可证](https://img.shields.io/github/license/tounh/node-red-mcp-server.svg)
-
-
-
-
-](https://github.com/tounh/node-red-mcp-server/blob/main/LICENSE)
+[![NPM 版本](https://img.shields.io/npm/v/@tounh/node-red-mcp-server.svg)](https://www.npmjs.com/package/@tounh/node-red-mcp-server)
+[![NPM 下载量](https://img.shields.io/npm/dm/@tounh/node-red-mcp-server.svg)](https://www.npmjs.com/package/@tounh/node-red-mcp-server)
+[![GitHub 许可证](https://img.shields.io/github/license/tounh/node-red-mcp-server.svg)](https://github.com/tounh/node-red-mcp-server/blob/main/LICENSE)
 **`@tounh/node-red-mcp-server`** 是一个为 [Node-RED](https://nodered.org/) 设计的模型上下文协议（MCP）服务器。它允许语言模型（如 Claude、GPT 等）通过一套标准化的 API 与 Node-RED 进行交互，实现自动化工作流的编程控制。
 
 简单来说，它就是一座连接 AI 语言模型和你的 Node-RED 项目的桥梁！🌉
@@ -71,7 +52,8 @@ npm update @tounh/node-red-mcp-server
 **使用 `npx` 的用户**:
 
 无需任何操作！`npx` 每次运行时都会获取最新的版本，确保你使用的总是最新的代码。
-##  快速上手
+
+## 🚀 快速上手
 
 有多种方式可以启动服务器：
 

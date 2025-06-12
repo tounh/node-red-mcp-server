@@ -15,7 +15,7 @@
 - 🧩 **节点控制**: 管理标签页和单个节点，按类型或属性搜索。
 - ⚙️ **状态访问**: 获取设置和运行时状态。
 - 💉 **远程触发**: 远程触发注入（`inject`）节点。
-- 📊 **可视化**: 输出和可视化流程图及统计数据。
+- 📊 **Mermaid可视化**: 支持4种核心模式的流程图表自动生成，专注最实用的可视化功能。
 - 🧠 **智能上下文管理**: 专为大型语言模型优化，有效控制上下文大小。
 - 🔄 **动态认证**: 推荐使用动态认证，自动管理令牌，无感刷新。
 
@@ -244,6 +244,21 @@ node-red-mcp-server
 - `get-settings`: 获取 Node-RED 运行时设置
 - `get-diagnostics`: 获取诊断信息
 
+### Mermaid可视化工具 (Mermaid Tools)
+
+专为Node-RED工作流设计的4种核心可视化模式：
+
+- `generate-flow-chart`: 生成流程架构图 - 展示节点连接关系和整体架构
+- `generate-sequence-diagram`: 生成通信序列图 - 分析节点间的消息传递时序
+- `generate-dataflow-diagram`: 生成数据流图 - 追踪数据在系统中的流转路径
+- `generate-state-diagram`: 生成状态变化图 - 可视化系统状态转换逻辑
+
+**特色功能**:
+- 🎯 **智能分析**: 自动识别节点类型和关系，生成高质量图表
+- 🔍 **流程过滤**: 支持指定特定流程标签进行精准分析
+- 📋 **即用格式**: 直接输出标准Mermaid代码，可在任何支持的平台使用
+- ⚡ **快速生成**: 优化算法，快速处理复杂流程
+
 ### 实用工具 (Utility Tools)
 
 - `api-help`: 显示 Node-RED API 帮助
@@ -324,3 +339,10 @@ npm install -g npm@latest
 ```
 
 运行此命令后，建议关闭并重新打开你的命令行工具，以确保新版本的 npm 生效。
+
+### 🔗 相关链接
+
+- [Node-RED 官方网站](https://nodered.org/)
+- [MCP 协议文档](https://modelcontextprotocol.io/introduction)
+- [Mermaid 图表语法](https://mermaid.js.org/)
+- [项目问题反馈](https://github.com/tounh/node-red-mcp-server/issues)

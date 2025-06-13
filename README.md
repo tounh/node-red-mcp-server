@@ -4,157 +4,83 @@
 [![NPM 下载量](https://img.shields.io/npm/dm/@tounh/node-red-mcp-server.svg)](https://www.npmjs.com/package/@tounh/node-red-mcp-server)
 [![GitHub 许可证](https://img.shields.io/github/license/tounh/node-red-mcp-server.svg)](https://github.com/tounh/node-red-mcp-server/blob/main/LICENSE)
 
+**`@tounh/node-red-mcp-server`** 是一个为 [Node-RED](https://nodered.org/) 设计的智能模型上下文协议（MCP）服务器。它允许AI语言模型（如 Claude、GPT 等）通过标准化 API 与 Node-RED 进行深度交互，实现自动化工作流的智能编程控制。
 
-**`@tounh/node-red-mcp-server`** 是一个为 [Node-RED](https://nodered.org/) 设计的模型上下文协议（MCP）服务器。它允许语言模型（如 Claude、GPT 等）通过一套标准化的 API 与 Node-RED 进行交互，实现自动化工作流的编程控制。
+🎯 **让AI与Node-RED无缝协作，实现智能化工作流管理！**
 
-简单来说，它就是一座连接 AI 语言模型和你的 Node-RED 项目的桥梁！🌉
+## ✨ 核心特性
 
-## ✨ 核心功能
+### 🧠 智能工作流管理
+- **语义逻辑布局**: 基于连线关系的智能节点布局算法，按功能逻辑自动分组
+- **智能区域避让**: 新节点自动避开现有内容，支持安全区域计算
+- **多种布局算法**: auto、collision_free、dagre_lr、grid 四种布局模式
 
-- 🀄️ **流程管理**: 通过 MCP 检索和更新 Node-RED 的工作流。
-- 🧩 **节点控制**: 管理标签页和单个节点，按类型或属性搜索。
-- ⚙️ **状态访问**: 获取设置和运行时状态。
-- 💉 **远程触发**: 远程触发注入（`inject`）节点。
-- 📊 **Mermaid可视化**: 支持4种核心模式的流程图表自动生成，专注最实用的可视化功能。
-- 🧠 **智能上下文管理**: 专为大型语言模型优化，有效控制上下文大小。
-- 🔄 **动态认证**: 推荐使用动态认证，自动管理令牌，无感刷新。
+### 🔧 高级工程能力
+- **坐标保护机制**: 防止节点位置丢失，支持智能坐标管理
+- **智能上下文管理**: 针对大型语言模型优化，有效控制上下文大小
+- **动态认证系统**: 自动管理令牌，无感刷新，提升安全性
+- **Mermaid可视化**: 流程图表自动生成
+
+### 🎯 AI集成优化
+- **完整MCP工具集**: 涵盖流程、节点、系统、可视化、提示词管理等功能
+- **智能依赖分析**: 轻量级流程关系分析，避免高内存消耗
+- **精准操作模式**: 优先单流程操作，支持按需搜索和上下文控制
 
 ## 📦 安装
 
-你可以根据需要选择全局安装或本地安装。
+你可以根据需要选择全局安装或本地安装：
 
 **全局安装 (推荐)**:
-
 ```bash
 npm install -g @tounh/node-red-mcp-server
 ```
 
 **本地安装**:
-
 ```bash
 npm install @tounh/node-red-mcp-server
 ```
 
-## 🔄 更新
-
-**全局安装的用户**:
-
-```bash
-npm update -g @tounh/node-red-mcp-server
-```
-
-**本地安装的用户**:
-
-在你的项目目录中运行：
-
-```bash
-npm update @tounh/node-red-mcp-server
-```
-
-**使用 `npx` 的用户**:
-
-无需任何操作！`npx` 每次运行时都会获取最新的版本，确保你使用的总是最新的代码。
-
 ## 🚀 快速上手
-
-有多种方式可以启动服务器：
 
 ### 命令行启动
 
-**使用静态令牌**:
-
-```bash
-node-red-mcp-server --url http://localhost:1880 --token YOUR_TOKEN
-```
-
 **使用动态认证 (推荐)**:
-
 ```bash
 node-red-mcp-server --url http://localhost:1880 --username admin --password your_password
 ```
 
-### 通过 `.env` 文件配置
-
-在项目根目录创建一个 `.env` 文件，内容如下：
-
-**选项 1: 静态令牌**
-
-```env
-NODE_RED_URL=http://localhost:1880
-NODE_RED_TOKEN=YOUR_STATIC_TOKEN
+**使用静态令牌**:
+```bash
+node-red-mcp-server --url http://localhost:1880 --token YOUR_TOKEN
 ```
 
-**选项 2: 动态认证 (推荐)**
+### 通过 `.env` 文件配置
 
+创建 `.env` 文件：
+
+**动态认证方式 (推荐)**:
 ```env
 NODE_RED_URL=http://localhost:1880
 NODE_RED_USERNAME=your_username
 NODE_RED_PASSWORD=your_password
 ```
 
-然后运行:
+**静态令牌方式**:
+```env
+NODE_RED_URL=http://localhost:1880
+NODE_RED_TOKEN=YOUR_STATIC_TOKEN
+```
 
+然后运行:
 ```bash
 node-red-mcp-server
 ```
 
-### 🤖 与 Claude 等语言模型集成
+## 🤖 Cursor IDE 集成配置
 
-1.  启动 MCP 服务器，或在 AI 工具（如 Claude Desktop）中配置自动启动。
-2.  在你的 AI 工具中添加一个新的工具配置：
+### 方式一：NPX 在线运行 (推荐)
 
-    ```json
-    {
-      "mcpServers": {
-        "node-red": {
-          "command": "node",
-          "args": [
-            "/path/to/@tounh/node-red-mcp-server/bin/node-red-mcp-server.mjs",
-            "--verbose"
-          ],
-          "env": {
-            "NODE_RED_URL": "http://your-node-red-url:1880",
-            "NODE_RED_USERNAME": "your-username",
-            "NODE_RED_PASSWORD": "your-password"
-          }
-        }
-      }
-    }
-    ```
-
-    - 确保将 `/path/to/@tounh/node-red-mcp-server` 替换为你的实际安装路径。
-    - 更新 `NODE_RED_URL`、`NODE_RED_USERNAME` 和 `NODE_RED_PASSWORD`。
-
-3.  配置完成后，你的 AI 助手就可以通过 MCP 工具与 Node-RED 实例交互了。
-### 通过 `npx` 临时运行
-
-如果你不想全局或本地安装，可以直接使用 `npx` 来运行 MCP 服务器。这在临时测试或作为大型工具链一部分时非常有用。
-
-在你的 AI 工具（如 Claude Desktop）的工具配置中，有两种方式来传递配置：
-
-**方式一：通过命令行参数 (简单但不推荐用于敏感信息)**
-
-```json
-{
-  "mcpServers": {
-    "node-red": {
-      "command": "npx",
-      "args": [
-        "--yes",
-        "@tounh/node-red-mcp-server",
-        "--url", "http://your-node-red-url:1880",
-        "--username", "your-username",
-        "--password", "your-password",
-        "--verbose"
-      ]
-    }
-  }
-}
-```
-
-**方式二：通过环境变量 (推荐)**
-
-这种方式更安全，因为它避免了将密码等敏感信息直接写在命令行里。
+在 Cursor 的 MCP 配置文件中添加：
 
 ```json
 {
@@ -167,7 +93,34 @@ node-red-mcp-server
         "--verbose"
       ],
       "env": {
-        "NODE_RED_URL": "http://your-node-red-url:1880",
+        "NODE_RED_URL": "http://localhost:1880",
+        "NODE_RED_USERNAME": "your-username", 
+        "NODE_RED_PASSWORD": "your-password"
+      }
+    }
+  }
+}
+```
+
+### 方式二：本地安装运行
+
+**步骤1**: 下载并安装到本地：
+```bash
+npm install -g @tounh/node-red-mcp-server
+```
+
+**步骤2**: 在 Cursor 的 MCP 配置文件中添加：
+```json
+{
+  "mcpServers": {
+    "node-red": {
+      "command": "node",
+      "args": [
+        "/path/to/node_modules/@tounh/node-red-mcp-server/bin/node-red-mcp-server.mjs",
+        "--verbose"
+      ],
+      "env": {
+        "NODE_RED_URL": "http://localhost:1880",
         "NODE_RED_USERNAME": "your-username",
         "NODE_RED_PASSWORD": "your-password"
       }
@@ -176,151 +129,159 @@ node-red-mcp-server
 }
 ```
 
-- `npx` 会自动下载最新版本的包，并在运行后清理，不会污染你的全局环境。
-- 优先推荐使用 `env` 环境变量来配置，更加安全和灵活。
-- `--yes` 参数确保自动确认包安装，无需手动交互。
+## 🛠️ 核心 MCP 工具集
 
-### 📋 Windows 配置路径
+### 🎯 智能流程工具
 
-在 Windows 上，Claude Desktop 的配置文件位于：
+#### ✅ 推荐操作（高效、精准）
+- **`get-flow`**: 按 ID 或名称获取特定工作流
+- **`update-flow`**: 智能更新工作流（支持合并模式和坐标保护）
+- **`add-nodes-to-flow`**: 智能添加节点（支持多种布局算法）
+- **`generate-ai-flow`**: AI驱动的工作流生成
+- **`create-flow`**: 创建新的工作流标签页
+- **`delete-flow`**: 删除指定工作流
+- **`list-tabs`**: 列出所有标签页概览
+- **`manage-flows-state`**: 工作流状态管理（启动/停止）
+
+#### 🧠 智能布局算法
+- **`auto`**: 自动选择最优布局算法
+- **`collision_free`**: 智能防冲突布局
+- **`dagre_lr`**: 层次化左右布局
+- **`grid`**: 网格化规整布局
+
+#### ⚠️ 全量操作（谨慎使用）
+- **`get-flows`**: 获取所有工作流（高内存消耗）
+
+### 📊 可视化分析工具
+
+#### ⚡ Mermaid 图表生成
+- **`generate-flow-chart`**: 流程架构图 - 展示节点连接关系和工作流结构
+
+### 🔧 系统控制工具
+
+#### ✅ 节点操作
+- **`inject`**: 触发注入节点
+- **`search-nodes`**: 智能节点搜索（支持类型、名称、属性搜索）
+- **`get-nodes`**: 列出已安装的节点模块
+- **`get-node-info`**: 获取特定节点模块信息
+- **`manage-node-module`**: 节点模块管理（安装/卸载/启用/禁用）
+
+#### ✅ 系统状态
+- **`get-system-info`**: 获取系统运行信息（设置/诊断/版本等）
+- **`auth-status`**: 检查认证状态
+- **`refresh-token`**: 刷新认证令牌（动态认证模式）
+- **`api-help`**: 显示API帮助信息
+
+#### ✅ 提示词管理
+- **`get-prompt-template`**: 获取预定义的提示词模板
+- **`list-prompt-templates`**: 列出所有可用的提示词模板
+
+## 🧠 智能布局算法
+
+### 核心特性
+- **🔗 基于连线关系**: 分析 `node.wires` 构建连接图谱
+- **⚡ 功能链识别**: 将完整执行路径组成逻辑功能链
+- **📝 逻辑行排列**: 每个功能链作为水平行布局
+- **🎯 智能分组**: 完整的逻辑流程自动组成一行
+
+### 算法优势
+```javascript
+// 示例：完整的功能链自动识别为一行
+HTTP接口 → 输入验证 → 业务处理 → 数据库操作 → 响应处理 → 输出结果
+
+// 分支处理功能链
+数据输入 → 条件判断 → 分支处理1/分支处理2 → 结果合并
+
+// 定时任务功能链  
+定时触发 → 数据处理 → 结果输出
 ```
-%APPDATA%\Claude\claude_desktop_config.json
+
+### 使用示例
+```javascript
+// 使用自动布局算法添加节点
+add-nodes-to-flow(
+  identifier: "my-flow",
+  nodesJson: "[{...节点配置...}]", 
+  layoutAlgorithm: "auto"  // 或 collision_free, dagre_lr, grid
+)
 ```
 
-有关模型上下文协议的更多信息，请访问 [官方 MCP 文档](https://modelcontextprotocol.io/introduction)。
+## 🛡️ 坐标保护与智能布局
 
-## 🔧 配置选项
+### 坐标保护机制
+- **✅ 自动保护**: 默认保留现有节点的 x、y 坐标
+- **🧠 智能合并**: 新节点自动避开现有区域
+- **📐 安全区域**: 计算安全位置，防止节点重叠
+- **🔍 冲突检测**: 120x30px节点尺寸 + 20px缓冲区检测
+
+### 智能布局特性
+- **螺旋搜索**: 寻找最佳可用位置的算法
+- **流向感知**: 自动检测工作流方向，智能布局
+- **区域避让**: 新内容自动放置在现有内容下方150px
+
+## 💡 最佳实践建议
+
+### 🎯 高效操作模式
+1. **精准操作优先**: 使用 `get-flow`、`update-flow` 等单流程操作
+2. **智能布局**: 优先使用 `auto` 或 `collision_free` 布局算法
+3. **上下文控制**: 指定具体流程标签或ID避免全量加载
+4. **坐标保护**: 保持默认坐标保护，确保布局稳定性
+
+### 🚫 避免的操作
+1. **❌ 全量拉取**: 避免 `get-flows` 等全量操作
+2. **❌ 无限制搜索**: 搜索时指定具体流程ID和条件  
+3. **❌ 过度更新**: 避免频繁的全量流程更新
+
+### ⚡ 性能优化
+- **流程ID优先**: 了解目标流程，直接操作
+- **分步处理**: 大批量修改分解为多个小操作
+- **依赖预分析**: 使用依赖分析工具减少试错
+
+## 🔐 认证配置
+
+### 动态认证 (推荐) 🔄
+- **自动令牌管理**: 自动获取和续订访问令牌
+- **过期处理**: 监控令牌过期并提前刷新
+- **重试逻辑**: 认证失败时自动重试
+- **安全性更高**: 使用短生命周期令牌
+
+### 静态令牌认证
+使用 Node-RED 生成的预共享访问令牌，需要手动更新。
+
+## 🔧 配置参数
 
 ### CLI 参数
-
 | 参数 | 缩写 | 描述 |
-| :--- | :--- | :--- |
+|------|------|------|
 | `--url` | `-u` | Node-RED 基础 URL |
+| `--username` | | 动态认证用户名 |
+| `--password` | | 动态认证密码 |
 | `--token` | `-t` | 静态 API 访问令牌 |
-| `--username` | | 动态认证的用户名 |
-| `--password` | | 动态认证的密码 |
 | `--verbose` | `-v` | 启用详细日志 |
 | `--help` | `-h` | 显示帮助信息 |
-| `--version` | `-V` | 显示版本号 |
 
 ### 环境变量
-
 | 变量 | 描述 |
-| :--- | :--- |
+|------|------|
 | `NODE_RED_URL` | Node-RED 实例的 URL |
-| `NODE_RED_TOKEN` | 静态 API 访问令牌 |
 | `NODE_RED_USERNAME` | 动态认证的用户名 |
 | `NODE_RED_PASSWORD` | 动态认证的密码 |
+| `NODE_RED_TOKEN` | 静态 API 访问令牌 |
 
-## 🛠️ 可用的 MCP 工具
+## ✅ 系统要求
 
-### 流程工具 (Flow Tools)
+- **Node.js**: v16 或更高版本
+- **Node-RED**: 正在运行并可访问 HTTP API 的实例
+- **认证配置**: 动态认证需要配置 `adminAuth`
+- **AI工具**: 支持 MCP 协议的客户端（如 Cursor、Claude Desktop）
 
-- `get-flows`: 获取所有工作流
-- `update-flows`: 更新所有工作流
-- `get-flow`: 按 ID 获取特定工作流
-- `get-flow-with-context`: 使用智能上下文控制获取工作流
-- `analyze-flow-dependencies`: 分析工作流依赖关系
-- `update-flow`: 按 ID 更新特定工作流
-- `list-tabs`: 列出所有标签页
-- `create-flow`: 创建新的工作流标签页
-- `delete-flow`: 删除工作流标签页
-- `get-flows-state`: 获取部署状态
-- `set-flows-state`: 更改部署状态
-- `get-flows-formatted`: 获取人类可读的工作流列表
-- `visualize-flows`: 生成流程图的可视化视图
+## 🔗 相关链接
 
-### 节点工具 (Node Tools)
-
-- `inject`: 触发一个注入节点
-- `get-nodes`: 列出可用的节点类型
-- `get-node-info`: 获取节点模块的详细信息
-- `toggle-node-module`: 启用/禁用节点模块
-- `find-nodes-by-type`: 按类型定位节点
-- `search-nodes`: 按名称或属性查找节点
-
-### 设置工具 (Settings Tools)
-
-- `get-settings`: 获取 Node-RED 运行时设置
-- `get-diagnostics`: 获取诊断信息
-
-### Mermaid可视化工具 (Mermaid Tools)
-
-专为Node-RED工作流设计的4种核心可视化模式：
-
-- `generate-flow-chart`: 生成流程架构图 - 展示节点连接关系和整体架构
-- `generate-sequence-diagram`: 生成通信序列图 - 分析节点间的消息传递时序
-- `generate-dataflow-diagram`: 生成数据流图 - 追踪数据在系统中的流转路径
-- `generate-state-diagram`: 生成状态变化图 - 可视化系统状态转换逻辑
-
-**特色功能**:
-- 🎯 **智能分析**: 自动识别节点类型和关系，生成高质量图表
-- 🔍 **流程过滤**: 支持指定特定流程标签进行精准分析
-- 📋 **即用格式**: 直接输出标准Mermaid代码，可在任何支持的平台使用
-- ⚡ **快速生成**: 优化算法，快速处理复杂流程
-
-### 实用工具 (Utility Tools)
-
-- `api-help`: 显示 Node-RED API 帮助
-- `auth-status`: 检查认证状态和令牌有效性
-- `refresh-token`: 手动刷新认证令牌（仅限动态认证）
-
-## 🧠 智能上下文管理
-
-为了解决大型语言模型（LLM）的上下文窗口限制，我们提供了智能的上下文管理工具。
-
-#### `get-flow-with-context` - 智能上下文控制
-
-此工具可以控制在处理特定工作流时检索多少上下文信息：
-
-- **🎯 Minimal (最小)**: 默认模式，最节省 Token。适用于简单的节点修改。
-- **🔗 Related (相关)**: 平衡模式。获取相关标签页和全局配置摘要，适用于跨流程修改。
-- **🌐 Full (完整)**: 获取所有工作流信息。**请谨慎使用**，适用于大型重构。
-
-#### `analyze-flow-dependencies` - 轻量级依赖分析
-
-在不加载完整内容的情况下分析流程关系。
-
-### AI 提示词示例
-
-- **最小上下文**: `"请修改工作流'sensor-data'中的HTTP请求节点，将URL改为新的API端点"`
-- **相关上下文**: `"我要修改'dashboard'工作流，但需要确保不与其他工作流的变量名冲突"`
-- **完整上下文**: `"请重新组织整个Node-RED项目，按功能模块重新分配工作流"`
-- **依赖分析**: `"分析'api-gateway'工作流使用了哪些全局变量和外部依赖"`
-
-## 🔐 认证方式
-
-支持两种认证方法：
-
-### 1. 静态令牌认证
-
-使用从 Node-RED 生成的预共享访问令牌。令牌过期后需要手动更新。
-
-### 2. 动态认证 (推荐) 🔄
-
-使用用户名/密码凭据自动管理认证令牌。
-
-- **自动令牌管理**: 自动获取和续订令牌。
-- **过期处理**: 监控令牌过期并在到期前刷新。
-- **重试逻辑**: 在认证失败时使用新令牌自动重试 API 调用。
-- **状态监控**: 检查令牌状态和剩余有效期。
-
-**工作原理**:
-1. 启动时，服务器使用用户名/密码向 Node-RED 进行身份验证。
-2. 收到一个带过期时间的访问令牌（通常为 7 天）。
-3. 监控令牌过期并在到期前自动刷新。
-4. 如果 API 调用因 401 (Unauthorized) 失败，会自动刷新令牌并重试。
-
-**优点**:
--无需手动管理令牌。
--在令牌更新期间服务不中断。
--使用生命周期更短的令牌，安全性更高。
-
-## ✅ 要求
-
-- Node.js v16 或更高版本
-- 一个正在运行并可访问 HTTP API 的 Node-RED 实例
-- 对于动态认证：Node-RED 实例需要配置 `adminAuth`
+- [Node-RED 官方网站](https://nodered.org/)
+- [MCP 协议文档](https://modelcontextprotocol.io/introduction)  
+- [Mermaid 图表语法](https://mermaid.js.org/)
+- [项目问题反馈](https://github.com/tounh/node-red-mcp-server/issues)
+- [Cursor IDE 官方网站](https://cursor.sh/)
 
 ## 📄 许可证
 
@@ -328,21 +289,4 @@ node-red-mcp-server
 
 ---
 
-## 🧑‍💻 开发提示
-
-### 如何更新 npm
-
-如果你在开发过程中需要更新你的 npm 客户端到最新版本，可以运行以下命令：
-
-```bash
-npm install -g npm@latest
-```
-
-运行此命令后，建议关闭并重新打开你的命令行工具，以确保新版本的 npm 生效。
-
-### 🔗 相关链接
-
-- [Node-RED 官方网站](https://nodered.org/)
-- [MCP 协议文档](https://modelcontextprotocol.io/introduction)
-- [Mermaid 图表语法](https://mermaid.js.org/)
-- [项目问题反馈](https://github.com/tounh/node-red-mcp-server/issues)
+**🎯 专为AI与Node-RED协作而生，让智能化工作流管理触手可及！**

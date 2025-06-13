@@ -1,6 +1,6 @@
 {
   "name": "@tounh/node-red-mcp-server",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "Model Context Protocol (MCP) server for Node-RED with core Mermaid visualization tools",
   "license": "MIT",
   "main": "lib/server.mjs",

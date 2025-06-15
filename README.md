@@ -25,6 +25,7 @@
 - **完整MCP工具集**: 涵盖流程、节点、系统、可视化、提示词管理等功能
 - **智能依赖分析**: 轻量级流程关系分析，避免高内存消耗
 - **精准操作模式**: 优先单流程操作，支持按需搜索和上下文控制
+- **节点状态感知**: 实时获取节点模块的启用/禁用状态，支持智能化管理
 
 ## 📦 安装
 
@@ -136,18 +137,12 @@ npm install -g @tounh/node-red-mcp-server
 #### ✅ 推荐操作（高效、精准）
 - **`get-flow`**: 按 ID 或名称获取特定工作流
 - **`update-flow`**: 智能更新工作流（支持合并模式和坐标保护）
-- **`add-nodes-to-flow`**: 智能添加节点（支持多种布局算法）
-- **`generate-ai-flow`**: AI驱动的工作流生成
 - **`create-flow`**: 创建新的工作流标签页
 - **`delete-flow`**: 删除指定工作流
 - **`list-tabs`**: 列出所有标签页概览
 - **`manage-flows-state`**: 工作流状态管理（启动/停止）
 
-#### 🧠 智能布局算法
-- **`auto`**: 自动选择最优布局算法
-- **`collision_free`**: 智能防冲突布局
-- **`dagre_lr`**: 层次化左右布局
-- **`grid`**: 网格化规整布局
+
 
 #### ⚠️ 全量操作（谨慎使用）
 - **`get-flows`**: 获取所有工作流（高内存消耗）
@@ -161,63 +156,65 @@ npm install -g @tounh/node-red-mcp-server
 
 #### ✅ 节点操作
 - **`inject`**: 触发注入节点
-- **`search-nodes`**: 智能节点搜索（支持类型、名称、属性搜索）
-- **`get-nodes`**: 列出已安装的节点模块
-- **`get-node-info`**: 获取特定节点模块信息
+- **`get-nodes`**: 获取节点信息（支持模块过滤和通配符匹配，包含启用状态）
+  - `module: "node-red-contrib-csv"` - 可选：过滤特定模块的节点
+  - `specificNodes: ["csv*", "*mqtt*", "debug"]` - 可选：支持通配符的节点过滤
+  - `returnRaw: false` (默认) - 返回格式：原始 HTML 或处理后数据
+  - `minimalFormat: true` (默认) - 输出格式：简化或详细
+  - **✨ 新增**: 每个节点包含 `enabled` 字段，显示模块在 Node-RED 中的启用状态
 - **`manage-node-module`**: 节点模块管理（安装/卸载/启用/禁用）
 
 #### ✅ 系统状态
 - **`get-system-info`**: 获取系统运行信息（设置/诊断/版本等）
-- **`auth-status`**: 检查认证状态
-- **`refresh-token`**: 刷新认证令牌（动态认证模式）
-- **`api-help`**: 显示API帮助信息
+- **`auth`**: 统一认证管理（检查状态/刷新令牌）
 
-#### ✅ 提示词管理
-- **`get-prompt-template`**: 获取预定义的提示词模板
-- **`list-prompt-templates`**: 列出所有可用的提示词模板
 
-## 🧠 智能布局算法
-
-### 核心特性
-- **🔗 基于连线关系**: 分析 `node.wires` 构建连接图谱
-- **⚡ 功能链识别**: 将完整执行路径组成逻辑功能链
-- **📝 逻辑行排列**: 每个功能链作为水平行布局
-- **🎯 智能分组**: 完整的逻辑流程自动组成一行
-
-### 算法优势
-```javascript
-// 示例：完整的功能链自动识别为一行
-HTTP接口 → 输入验证 → 业务处理 → 数据库操作 → 响应处理 → 输出结果
-
-// 分支处理功能链
-数据输入 → 条件判断 → 分支处理1/分支处理2 → 结果合并
-
-// 定时任务功能链  
-定时触发 → 数据处理 → 结果输出
-```
 
 ### 使用示例
+
+#### 工作流操作
 ```javascript
-// 使用自动布局算法添加节点
-add-nodes-to-flow(
+// 更新现有工作流
+update-flow(
   identifier: "my-flow",
-  nodesJson: "[{...节点配置...}]", 
-  layoutAlgorithm: "auto"  // 或 collision_free, dagre_lr, grid
+  flowJson: "{...工作流配置...}",
+  mergeMode: "merge"  // 或 add-only, replace
 )
 ```
 
-## 🛡️ 坐标保护与智能布局
+#### 节点信息查询
+```javascript
+// 获取特定节点信息（包含启用状态）
+get-nodes(
+  specificNodes: ["inject", "debug"],
+  minimalFormat: true
+)
+
+// 返回示例：
+{
+  "nodes": [
+    {
+      "type": "inject",
+      "name": "inject",
+      "category": "common",
+      "module": "node-red",
+      "enabled": true,  // ✨ 新增：模块启用状态
+      "color": "#a6bbcf",
+      "inputs": 0,
+      "outputs": 1,
+      "icon": "inject.svg"
+    }
+  ]
+}
+```
+
+## 🛡️ 坐标保护与智能合并
 
 ### 坐标保护机制
 - **✅ 自动保护**: 默认保留现有节点的 x、y 坐标
-- **🧠 智能合并**: 新节点自动避开现有区域
-- **📐 安全区域**: 计算安全位置，防止节点重叠
-- **🔍 冲突检测**: 120x30px节点尺寸 + 20px缓冲区检测
-
-### 智能布局特性
-- **螺旋搜索**: 寻找最佳可用位置的算法
-- **流向感知**: 自动检测工作流方向，智能布局
-- **区域避让**: 新内容自动放置在现有内容下方150px
+- **🧠 智能合并**: 支持三种合并模式（replace、merge、add-only）
+- **📐 自动布局**: 新节点自动放置在不冲突的位置
+- **🔍 冲突检测**: 自动检测坐标冲突并调整位置
 
 ## 💡 最佳实践建议
 

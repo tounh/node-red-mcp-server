@@ -1,0 +1,4835 @@
+[
+  {
+    "module": "node-red/junction",
+    "nodeType": "junction",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red/inject",
+    "nodeType": "inject",
+    "category": "common",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "inject.svg",
+    "color": "#a6bbcf",
+    "defaultProperties": [
+      "name",
+      "props",
+      "repeat",
+      "crontab",
+      "once",
+      "onceDelay",
+      "topic",
+      "payload",
+      "payloadType"
+    ],
+    "functionalSummary": "Injects a message into a flow either manually or at regular intervals. The message payload can be a variety of types, including strings, JavaScript objects or the current time.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "props": {
+        "value": "",
+        "type": "string"
+      },
+      "repeat": {
+        "value": "",
+        "type": "string"
+      },
+      "crontab": {
+        "value": "",
+        "type": "string"
+      },
+      "once": {
+        "value": "",
+        "type": "string"
+      },
+      "onceDelay": {
+        "value": "",
+        "type": "string"
+      },
+      "topic": {
+        "value": "",
+        "type": "string"
+      },
+      "payload": {
+        "value": "",
+        "type": "string"
+      },
+      "payloadType": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/debug",
+    "nodeType": "debug",
+    "category": "common",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "debug.svg",
+    "color": "#87a980",
+    "defaultProperties": [
+      "name",
+      "active",
+      "tosidebar",
+      "console",
+      "tostatus",
+      "complete",
+      "targetType",
+      "statusVal",
+      "statusType"
+    ],
+    "functionalSummary": "Displays selected message properties in the debug sidebar tab and optionally the runtime log. By default it displays msg.payload, but can be configured to display any property, the full message or the",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": true,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "_DEFAULT_",
+        "type": "string"
+      },
+      "active": {
+        "value": "true",
+        "type": "boolean"
+      },
+      "tosidebar": {
+        "value": "true",
+        "type": "boolean"
+      },
+      "console": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "tostatus": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "complete": {
+        "value": "false",
+        "type": "string"
+      },
+      "targetType": {
+        "value": "undefined",
+        "type": "string"
+      },
+      "statusVal": {
+        "value": "",
+        "type": "string"
+      },
+      "statusType": {
+        "value": "auto",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/complete",
+    "nodeType": "complete",
+    "category": "common",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "alert.svg",
+    "color": "#c0edc0",
+    "defaultProperties": [
+      "name",
+      "scope",
+      "uncaught"
+    ],
+    "functionalSummary": "Trigger a flow when another node completes its handling of a message.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "scope": {
+        "value": "[]",
+        "type": "string"
+      },
+      "uncaught": {
+        "value": "false",
+        "type": "boolean"
+      }
+    }
+  },
+  {
+    "module": "node-red/catch",
+    "nodeType": "catch",
+    "category": "common",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "alert.svg",
+    "color": "#e49191",
+    "defaultProperties": [
+      "name",
+      "scope",
+      "uncaught"
+    ],
+    "functionalSummary": "Catch errors thrown by nodes on the same tab.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "scope": {
+        "value": "null",
+        "type": "string"
+      },
+      "uncaught": {
+        "value": "false",
+        "type": "boolean"
+      }
+    }
+  },
+  {
+    "module": "node-red/status",
+    "nodeType": "status",
+    "category": "common",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "status.svg",
+    "color": "#94c1d0",
+    "defaultProperties": [
+      "name",
+      "scope"
+    ],
+    "functionalSummary": "Report status messages from other nodes on the same tab.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "scope": {
+        "value": "null",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/link",
+    "nodeType": "link in",
+    "category": "common",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "link-out.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "links"
+    ],
+    "functionalSummary": "Create virtual wires between flows.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "_DEFAULT_",
+        "type": "string"
+      },
+      "links": {
+        "value": "[]",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/link",
+    "nodeType": "link out",
+    "category": "common",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "mode",
+      "links"
+    ],
+    "functionalSummary": "Create virtual wires between flows.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "_DEFAULT_",
+        "type": "string"
+      },
+      "mode": {
+        "value": "link",
+        "type": "string"
+      },
+      "links": {
+        "value": "[]",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/link",
+    "nodeType": "link call",
+    "category": "common",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "link-call.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "links",
+      "linkType",
+      "timeout"
+    ],
+    "functionalSummary": "Calls a flow that starts with a link in node and passes on the response.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "links": {
+        "value": "[]",
+        "type": "string"
+      },
+      "linkType": {
+        "value": "static",
+        "type": "string"
+      },
+      "timeout": {
+        "value": "30",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/comment",
+    "nodeType": "comment",
+    "category": "common",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "comment.svg",
+    "color": "#ffffff",
+    "defaultProperties": [
+      "name",
+      "info"
+    ],
+    "functionalSummary": "A node you can use to add comments to your flows.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "info": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/global-config",
+    "nodeType": "global-config",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "env"
+    ],
+    "functionalSummary": "A node for holding global configuration of flows.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "env": {
+        "value": "[]",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/unknown",
+    "nodeType": "unknown",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#fff0f0",
+    "defaultProperties": [
+      "name"
+    ],
+    "functionalSummary": "This node is a type unknown to your installation of Node-RED.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/function",
+    "nodeType": "function",
+    "category": "function",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#fdd0a2",
+    "defaultProperties": [
+      "name",
+      "func",
+      "outputs",
+      "timeout",
+      "noerr",
+      "initialize",
+      "finalize",
+      "libs"
+    ],
+    "functionalSummary": "A JavaScript function to run against the messages being received by the node.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "func": {
+        "value": "",
+        "type": "string"
+      },
+      "outputs": {
+        "value": "",
+        "type": "string"
+      },
+      "timeout": {
+        "value": "",
+        "type": "string"
+      },
+      "noerr": {
+        "value": "",
+        "type": "string"
+      },
+      "initialize": {
+        "value": "",
+        "type": "string"
+      },
+      "finalize": {
+        "value": "",
+        "type": "string"
+      },
+      "libs": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/switch",
+    "nodeType": "switch",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "switch.svg",
+    "color": "#E2D96E",
+    "defaultProperties": [
+      "name",
+      "property",
+      "propertyType",
+      "rules",
+      "checkall",
+      "repair",
+      "outputs"
+    ],
+    "functionalSummary": "Route messages based on their property values or sequence position.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "property": {
+        "value": "payload",
+        "type": "string"
+      },
+      "propertyType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "rules": {
+        "value": "[{t:\"eq\"",
+        "type": "array"
+      },
+      "checkall": {
+        "value": "true",
+        "type": "string"
+      },
+      "repair": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "outputs": {
+        "value": "1",
+        "type": "number"
+      }
+    }
+  },
+  {
+    "module": "node-red/change",
+    "nodeType": "change",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "swap.svg",
+    "color": "#E2D96E",
+    "defaultProperties": [
+      "name",
+      "rules",
+      "action",
+      "property",
+      "from",
+      "to",
+      "reg"
+    ],
+    "functionalSummary": "Set, change, delete or move properties of a message, flow context or global context.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "rules": {
+        "value": "[{t:\"set\"",
+        "type": "array"
+      },
+      "action": {
+        "value": "",
+        "type": "string"
+      },
+      "property": {
+        "value": "",
+        "type": "string"
+      },
+      "from": {
+        "value": "",
+        "type": "string"
+      },
+      "to": {
+        "value": "",
+        "type": "string"
+      },
+      "reg": {
+        "value": "false",
+        "type": "boolean"
+      }
+    }
+  },
+  {
+    "module": "node-red/range",
+    "nodeType": "range",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "range.svg",
+    "color": "#E2D96E",
+    "defaultProperties": [
+      "minin",
+      "maxin",
+      "minout",
+      "maxout",
+      "action",
+      "round",
+      "property",
+      "name"
+    ],
+    "functionalSummary": "Maps a numeric value to a different range.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "minin": {
+        "value": "",
+        "type": "string"
+      },
+      "maxin": {
+        "value": "",
+        "type": "string"
+      },
+      "minout": {
+        "value": "",
+        "type": "string"
+      },
+      "maxout": {
+        "value": "",
+        "type": "string"
+      },
+      "action": {
+        "value": "scale",
+        "type": "string"
+      },
+      "round": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "property": {
+        "value": "payload",
+        "type": "string"
+      },
+      "name": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/template",
+    "nodeType": "template",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "template.svg",
+    "color": "rgb(243, 181, 103)",
+    "defaultProperties": [
+      "name",
+      "field",
+      "fieldType",
+      "format",
+      "syntax",
+      "template",
+      "output"
+    ],
+    "functionalSummary": "Sets a property based on the provided template.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "field": {
+        "value": "payload",
+        "type": "string"
+      },
+      "fieldType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "format": {
+        "value": "handlebars",
+        "type": "string"
+      },
+      "syntax": {
+        "value": "mustache",
+        "type": "string"
+      },
+      "template": {
+        "value": "\"This is the payload: {{payload",
+        "type": "string"
+      },
+      "output": {
+        "value": "str",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/delay",
+    "nodeType": "delay",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "timer.svg",
+    "color": "#E6E0F8",
+    "defaultProperties": [
+      "name",
+      "pauseType",
+      "timeout",
+      "timeoutUnits",
+      "rate",
+      "nbRateUnits",
+      "rateUnits",
+      "randomFirst",
+      "randomLast",
+      "randomUnits",
+      "drop",
+      "allowrate",
+      "outputs"
+    ],
+    "functionalSummary": "Delays each message passing through the node or limits the rate at which they can pass.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "pauseType": {
+        "value": "delay",
+        "type": "string"
+      },
+      "timeout": {
+        "value": "5",
+        "type": "string"
+      },
+      "timeoutUnits": {
+        "value": "seconds",
+        "type": "string"
+      },
+      "rate": {
+        "value": "1",
+        "type": "string"
+      },
+      "nbRateUnits": {
+        "value": "1",
+        "type": "string"
+      },
+      "rateUnits": {
+        "value": "second",
+        "type": "string"
+      },
+      "randomFirst": {
+        "value": "1",
+        "type": "string"
+      },
+      "randomLast": {
+        "value": "5",
+        "type": "string"
+      },
+      "randomUnits": {
+        "value": "seconds",
+        "type": "string"
+      },
+      "drop": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "allowrate": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "outputs": {
+        "value": "1",
+        "type": "number"
+      }
+    }
+  },
+  {
+    "module": "node-red/trigger",
+    "nodeType": "trigger",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "trigger.svg",
+    "color": "#E6E0F8",
+    "defaultProperties": [
+      "name",
+      "op1",
+      "op2",
+      "op1type",
+      "op2type",
+      "duration",
+      "extend",
+      "overrideDelay",
+      "units",
+      "reset",
+      "bytopic",
+      "topic",
+      "outputs"
+    ],
+    "functionalSummary": "When triggered, can send a message, and then optionally a second message, unless extended or reset.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "op1": {
+        "value": "1",
+        "type": "string"
+      },
+      "op2": {
+        "value": "0",
+        "type": "string"
+      },
+      "op1type": {
+        "value": "val",
+        "type": "string"
+      },
+      "op2type": {
+        "value": "val",
+        "type": "string"
+      },
+      "duration": {
+        "value": "250",
+        "type": "string"
+      },
+      "extend": {
+        "value": "false",
+        "type": "string"
+      },
+      "overrideDelay": {
+        "value": "false",
+        "type": "string"
+      },
+      "units": {
+        "value": "ms",
+        "type": "string"
+      },
+      "reset": {
+        "value": "",
+        "type": "string"
+      },
+      "bytopic": {
+        "value": "all",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "outputs": {
+        "value": "1",
+        "type": "number"
+      }
+    }
+  },
+  {
+    "module": "node-red/exec",
+    "nodeType": "exec",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 3,
+    "icon": "cog.svg",
+    "color": "darksalmon",
+    "defaultProperties": [
+      "command",
+      "addpay",
+      "append",
+      "useSpawn",
+      "timer",
+      "winHide",
+      "oldrc",
+      "name"
+    ],
+    "functionalSummary": "Runs a system command and returns its output.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "command": {
+        "value": "",
+        "type": "string"
+      },
+      "addpay": {
+        "value": "",
+        "type": "string"
+      },
+      "append": {
+        "value": "",
+        "type": "string"
+      },
+      "useSpawn": {
+        "value": "false",
+        "type": "string"
+      },
+      "timer": {
+        "value": "",
+        "type": "string"
+      },
+      "winHide": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "oldrc": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "name": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/rbe",
+    "nodeType": "rbe",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "rbe.png",
+    "color": "#E2D96E",
+    "defaultProperties": [
+      "name",
+      "func",
+      "gap",
+      "start",
+      "inout",
+      "septopics",
+      "property",
+      "topi"
+    ],
+    "functionalSummary": "Report by Exception (RBE) node - only passes on data if the payload has changed. It can also block unless, or ignore if the value changes by a specified amount (Dead- and Narrowband mode).",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "func": {
+        "value": "rbe",
+        "type": "string"
+      },
+      "gap": {
+        "value": "",
+        "type": "string"
+      },
+      "start": {
+        "value": "",
+        "type": "string"
+      },
+      "inout": {
+        "value": "out",
+        "type": "string"
+      },
+      "septopics": {
+        "value": "true",
+        "type": "boolean"
+      },
+      "property": {
+        "value": "payload",
+        "type": "string"
+      },
+      "topi": {
+        "value": "topic",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/tls",
+    "nodeType": "tls-config",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "cert",
+      "key",
+      "ca",
+      "certname",
+      "keyname",
+      "caname",
+      "servername",
+      "verifyservercert",
+      "alpnprotocol"
+    ],
+    "functionalSummary": "Configuration options for TLS connections.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "cert": {
+        "value": "",
+        "type": "string"
+      },
+      "key": {
+        "value": "",
+        "type": "string"
+      },
+      "ca": {
+        "value": "",
+        "type": "string"
+      },
+      "certname": {
+        "value": "",
+        "type": "string"
+      },
+      "keyname": {
+        "value": "",
+        "type": "string"
+      },
+      "caname": {
+        "value": "",
+        "type": "string"
+      },
+      "servername": {
+        "value": "",
+        "type": "string"
+      },
+      "verifyservercert": {
+        "value": "true",
+        "type": "string"
+      },
+      "alpnprotocol": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/httpproxy",
+    "nodeType": "http proxy",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "url",
+      "noproxy"
+    ],
+    "functionalSummary": "Configuration options for HTTP proxy.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "url": {
+        "value": "",
+        "type": "string"
+      },
+      "noproxy": {
+        "value": "[]",
+        "type": "array"
+      }
+    }
+  },
+  {
+    "module": "node-red/mqtt",
+    "nodeType": "mqtt in",
+    "category": "network",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "bridge.svg",
+    "color": "#d8bfd8",
+    "defaultProperties": [
+      "name",
+      "topic",
+      "qos",
+      "datatype",
+      "broker",
+      "subscriptionIdentifier",
+      "nl",
+      "rap",
+      "rh",
+      "inputs"
+    ],
+    "functionalSummary": "Connects to a MQTT broker and subscribes to messages from the specified topic.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "topic": {
+        "value": "",
+        "type": "string"
+      },
+      "qos": {
+        "value": "2",
+        "type": "string"
+      },
+      "datatype": {
+        "value": "auto-detect",
+        "type": "string"
+      },
+      "broker": {
+        "value": "",
+        "type": "string"
+      },
+      "subscriptionIdentifier": {
+        "value": "0",
+        "type": "number"
+      },
+      "nl": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "rap": {
+        "value": "true",
+        "type": "boolean"
+      },
+      "rh": {
+        "value": "0",
+        "type": "number"
+      },
+      "inputs": {
+        "value": "0",
+        "type": "number"
+      }
+    }
+  },
+  {
+    "module": "node-red/mqtt",
+    "nodeType": "mqtt out",
+    "category": "network",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "bridge.svg",
+    "color": "#d8bfd8",
+    "defaultProperties": [
+      "name",
+      "topic",
+      "qos",
+      "retain",
+      "respTopic",
+      "contentType",
+      "userProps",
+      "correl",
+      "expiry",
+      "broker"
+    ],
+    "functionalSummary": "Connects to a MQTT broker and publishes messages.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "topic": {
+        "value": "",
+        "type": "string"
+      },
+      "qos": {
+        "value": "",
+        "type": "string"
+      },
+      "retain": {
+        "value": "",
+        "type": "string"
+      },
+      "respTopic": {
+        "value": "",
+        "type": "string"
+      },
+      "contentType": {
+        "value": "",
+        "type": "string"
+      },
+      "userProps": {
+        "value": "",
+        "type": "string"
+      },
+      "correl": {
+        "value": "",
+        "type": "string"
+      },
+      "expiry": {
+        "value": "",
+        "type": "string"
+      },
+      "broker": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/mqtt",
+    "nodeType": "mqtt-broker",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "broker",
+      "port",
+      "tls",
+      "clientid",
+      "autoConnect",
+      "usetls",
+      "verifyservercert",
+      "compatmode",
+      "protocolVersion",
+      "keepalive",
+      "cleansession",
+      "autoUnsubscribe",
+      "birthTopic",
+      "birthQos",
+      "birthRetain",
+      "birthPayload",
+      "birthMsg",
+      "closeTopic",
+      "closeQos",
+      "closeRetain",
+      "closePayload",
+      "closeMsg",
+      "willTopic",
+      "willQos",
+      "willRetain",
+      "willPayload",
+      "willMsg",
+      "userProps",
+      "sessionExpiry"
+    ],
+    "functionalSummary": "Configuration for a connection to an MQTT broker.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "broker": {
+        "value": "",
+        "type": "string"
+      },
+      "port": {
+        "value": "1883",
+        "type": "number"
+      },
+      "tls": {
+        "value": "",
+        "type": "string"
+      },
+      "clientid": {
+        "value": "",
+        "type": "string"
+      },
+      "autoConnect": {
+        "value": "true",
+        "type": "string"
+      },
+      "usetls": {
+        "value": "false",
+        "type": "string"
+      },
+      "verifyservercert": {
+        "value": "false",
+        "type": "string"
+      },
+      "compatmode": {
+        "value": "false",
+        "type": "string"
+      },
+      "protocolVersion": {
+        "value": "4",
+        "type": "number"
+      },
+      "keepalive": {
+        "value": "60",
+        "type": "number"
+      },
+      "cleansession": {
+        "value": "true",
+        "type": "string"
+      },
+      "autoUnsubscribe": {
+        "value": "true",
+        "type": "string"
+      },
+      "birthTopic": {
+        "value": "",
+        "type": "string"
+      },
+      "birthQos": {
+        "value": "0",
+        "type": "string"
+      },
+      "birthRetain": {
+        "value": "false",
+        "type": "string"
+      },
+      "birthPayload": {
+        "value": "",
+        "type": "string"
+      },
+      "birthMsg": {
+        "value": "{",
+        "type": "string"
+      },
+      "closeTopic": {
+        "value": "",
+        "type": "string"
+      },
+      "closeQos": {
+        "value": "0",
+        "type": "string"
+      },
+      "closeRetain": {
+        "value": "false",
+        "type": "string"
+      },
+      "closePayload": {
+        "value": "",
+        "type": "string"
+      },
+      "closeMsg": {
+        "value": "{",
+        "type": "string"
+      },
+      "willTopic": {
+        "value": "",
+        "type": "string"
+      },
+      "willQos": {
+        "value": "0",
+        "type": "string"
+      },
+      "willRetain": {
+        "value": "false",
+        "type": "string"
+      },
+      "willPayload": {
+        "value": "",
+        "type": "string"
+      },
+      "willMsg": {
+        "value": "{",
+        "type": "string"
+      },
+      "userProps": {
+        "value": "",
+        "type": "string"
+      },
+      "sessionExpiry": {
+        "value": "0",
+        "type": "number"
+      }
+    }
+  },
+  {
+    "module": "node-red/httpin",
+    "nodeType": "http in",
+    "category": "network",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "white-globe.svg",
+    "color": "rgb(231, 231, 174)",
+    "defaultProperties": [
+      "name",
+      "url",
+      "method",
+      "upload",
+      "swaggerDoc"
+    ],
+    "functionalSummary": "Creates an HTTP end-point for creating web services.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "url": {
+        "value": "",
+        "type": "string"
+      },
+      "method": {
+        "value": "get",
+        "type": "string"
+      },
+      "upload": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "swaggerDoc": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/httpin",
+    "nodeType": "http response",
+    "category": "network",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "white-globe.svg",
+    "color": "rgb(231, 231, 174)",
+    "defaultProperties": [
+      "name",
+      "statusCode",
+      "headers"
+    ],
+    "functionalSummary": "Sends responses back to requests received from an HTTP Input node.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "statusCode": {
+        "value": "",
+        "type": "string"
+      },
+      "headers": {
+        "value": "{",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/httprequest",
+    "nodeType": "http request",
+    "category": "network",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "white-globe.svg",
+    "color": "rgb(231, 231, 174)",
+    "defaultProperties": [
+      "name",
+      "method",
+      "ret",
+      "paytoqs",
+      "url",
+      "tls",
+      "persist",
+      "proxy",
+      "insecureHTTPParser",
+      "authType",
+      "senderr",
+      "headers"
+    ],
+    "functionalSummary": "Sends HTTP requests and returns the response.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "method": {
+        "value": "GET",
+        "type": "string"
+      },
+      "ret": {
+        "value": "txt",
+        "type": "string"
+      },
+      "paytoqs": {
+        "value": "false",
+        "type": "string"
+      },
+      "url": {
+        "value": "",
+        "type": "string"
+      },
+      "tls": {
+        "value": "",
+        "type": "string"
+      },
+      "persist": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "proxy": {
+        "value": "",
+        "type": "string"
+      },
+      "insecureHTTPParser": {
+        "value": "false",
+        "type": "string"
+      },
+      "authType": {
+        "value": "",
+        "type": "string"
+      },
+      "senderr": {
+        "value": "false",
+        "type": "string"
+      },
+      "headers": {
+        "value": "[]",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/websocket",
+    "nodeType": "websocket in",
+    "category": "network",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "white-globe.svg",
+    "color": "rgb(215, 215, 160)",
+    "defaultProperties": [
+      "name",
+      "server",
+      "client"
+    ],
+    "functionalSummary": "WebSocket input node.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "server": {
+        "value": "",
+        "type": "string"
+      },
+      "client": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/websocket",
+    "nodeType": "websocket out",
+    "category": "network",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "white-globe.svg",
+    "color": "rgb(215, 215, 160)",
+    "defaultProperties": [
+      "name",
+      "server",
+      "client"
+    ],
+    "functionalSummary": "WebSocket out node.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "server": {
+        "value": "",
+        "type": "string"
+      },
+      "client": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/websocket",
+    "nodeType": "websocket-listener",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "path",
+      "wholemsg"
+    ],
+    "functionalSummary": "This configuration node creates a WebSocket Server endpoint using the specified path.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "path": {
+        "value": "",
+        "type": "string"
+      },
+      "wholemsg": {
+        "value": "false",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/websocket",
+    "nodeType": "websocket-client",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "path",
+      "tls",
+      "wholemsg",
+      "hb",
+      "subprotocol",
+      "headers"
+    ],
+    "functionalSummary": "This configuration node connects a WebSocket client to the specified URL.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "path": {
+        "value": "",
+        "type": "string"
+      },
+      "tls": {
+        "value": "",
+        "type": "string"
+      },
+      "wholemsg": {
+        "value": "false",
+        "type": "string"
+      },
+      "hb": {
+        "value": "",
+        "type": "string"
+      },
+      "subprotocol": {
+        "value": "",
+        "type": "string"
+      },
+      "headers": {
+        "value": "[]",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/tcpin",
+    "nodeType": "tcp in",
+    "category": "network",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "bridge-dash.svg",
+    "color": "Silver",
+    "defaultProperties": [
+      "name",
+      "server",
+      "host",
+      "port",
+      "datamode",
+      "datatype",
+      "newline",
+      "topic",
+      "trim",
+      "base64",
+      "tls"
+    ],
+    "functionalSummary": "Provides a choice of TCP inputs. Can either connect to a remote TCP port, or accept incoming connections.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "server": {
+        "value": "server",
+        "type": "string"
+      },
+      "host": {
+        "value": "",
+        "type": "string"
+      },
+      "port": {
+        "value": "",
+        "type": "string"
+      },
+      "datamode": {
+        "value": "stream",
+        "type": "string"
+      },
+      "datatype": {
+        "value": "buffer",
+        "type": "string"
+      },
+      "newline": {
+        "value": "",
+        "type": "string"
+      },
+      "topic": {
+        "value": "",
+        "type": "string"
+      },
+      "trim": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "base64": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "tls": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/tcpin",
+    "nodeType": "tcp out",
+    "category": "network",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "bridge-dash.svg",
+    "color": "Silver",
+    "defaultProperties": [
+      "name",
+      "host",
+      "port",
+      "beserver",
+      "base64",
+      "end",
+      "tls"
+    ],
+    "functionalSummary": "Provides a choice of TCP outputs. Can either connect to a remote TCP port, accept incoming connections, or reply to messages received from a TCP In node.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "host": {
+        "value": "",
+        "type": "string"
+      },
+      "port": {
+        "value": "",
+        "type": "string"
+      },
+      "beserver": {
+        "value": "client",
+        "type": "string"
+      },
+      "base64": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "end": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "tls": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/tcpin",
+    "nodeType": "tcp request",
+    "category": "network",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "bridge-dash.svg",
+    "color": "Silver",
+    "defaultProperties": [
+      "name",
+      "server",
+      "port",
+      "out",
+      "ret",
+      "splitc",
+      "newline",
+      "trim",
+      "tls"
+    ],
+    "functionalSummary": "A simple TCP request node - sends the msg.payload to a server tcp port and expects a response.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "server": {
+        "value": "",
+        "type": "string"
+      },
+      "port": {
+        "value": "",
+        "type": "string"
+      },
+      "out": {
+        "value": "time",
+        "type": "string"
+      },
+      "ret": {
+        "value": "buffer",
+        "type": "string"
+      },
+      "splitc": {
+        "value": "0",
+        "type": "string"
+      },
+      "newline": {
+        "value": "",
+        "type": "string"
+      },
+      "trim": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "tls": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/udp",
+    "nodeType": "udp in",
+    "category": "network",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "bridge-dash.svg",
+    "color": "Silver",
+    "defaultProperties": [
+      "name",
+      "iface",
+      "port",
+      "ipv",
+      "multicast",
+      "group",
+      "datatype"
+    ],
+    "functionalSummary": "A UDP input node, that produces a msg.payload containing a Buffer, string, or base64 encoded string. Supports multicast.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "iface": {
+        "value": "",
+        "type": "string"
+      },
+      "port": {
+        "value": "",
+        "type": "string"
+      },
+      "ipv": {
+        "value": "udp4",
+        "type": "string"
+      },
+      "multicast": {
+        "value": "false",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "datatype": {
+        "value": "buffer",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/udp",
+    "nodeType": "udp out",
+    "category": "network",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "bridge-dash.svg",
+    "color": "Silver",
+    "defaultProperties": [
+      "name",
+      "addr",
+      "iface",
+      "port",
+      "ipv",
+      "outport",
+      "base64",
+      "multicast"
+    ],
+    "functionalSummary": "This node sends msg.payload to the designated UDP host and port. Supports multicast.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "addr": {
+        "value": "",
+        "type": "string"
+      },
+      "iface": {
+        "value": "",
+        "type": "string"
+      },
+      "port": {
+        "value": "",
+        "type": "string"
+      },
+      "ipv": {
+        "value": "udp4",
+        "type": "string"
+      },
+      "outport": {
+        "value": "",
+        "type": "string"
+      },
+      "base64": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "multicast": {
+        "value": "false",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/CSV",
+    "nodeType": "csv",
+    "category": "parser",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "parser-csv.svg",
+    "color": "#DEBD5C",
+    "defaultProperties": [
+      "name",
+      "spec",
+      "sep",
+      "quo",
+      "hdrin",
+      "hdrout",
+      "multi",
+      "ret",
+      "temp",
+      "skip",
+      "strings",
+      "include_empty_strings",
+      "include_null_values"
+    ],
+    "functionalSummary": "Converts between a CSV formatted string and its JavaScript object representation, in either direction.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "spec": {
+        "value": "rfc",
+        "type": "string"
+      },
+      "sep": {
+        "value": "",
+        "type": "string"
+      },
+      "quo": {
+        "value": "\"",
+        "type": "string"
+      },
+      "hdrin": {
+        "value": "",
+        "type": "string"
+      },
+      "hdrout": {
+        "value": "none",
+        "type": "string"
+      },
+      "multi": {
+        "value": "one",
+        "type": "string"
+      },
+      "ret": {
+        "value": "\\\\r\\\\n",
+        "type": "string"
+      },
+      "temp": {
+        "value": "",
+        "type": "string"
+      },
+      "skip": {
+        "value": "0",
+        "type": "string"
+      },
+      "strings": {
+        "value": "true",
+        "type": "boolean"
+      },
+      "include_empty_strings": {
+        "value": "",
+        "type": "string"
+      },
+      "include_null_values": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/HTML",
+    "nodeType": "html",
+    "category": "parser",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "parser-html.svg",
+    "color": "#DEBD5C",
+    "defaultProperties": [
+      "name",
+      "property",
+      "outproperty",
+      "tag",
+      "ret",
+      "as",
+      "chr"
+    ],
+    "functionalSummary": "Extracts elements from an html document held in msg.payload using a CSS selector.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "property": {
+        "value": "payload",
+        "type": "string"
+      },
+      "outproperty": {
+        "value": "payload",
+        "type": "string"
+      },
+      "tag": {
+        "value": "",
+        "type": "string"
+      },
+      "ret": {
+        "value": "html",
+        "type": "string"
+      },
+      "as": {
+        "value": "single",
+        "type": "string"
+      },
+      "chr": {
+        "value": "_",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/JSON",
+    "nodeType": "json",
+    "category": "parser",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "parser-json.svg",
+    "color": "#DEBD5C",
+    "defaultProperties": [
+      "name",
+      "property",
+      "action",
+      "pretty"
+    ],
+    "functionalSummary": "Converts between a JSON string and its JavaScript object representation, in either direction.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "property": {
+        "value": "payload",
+        "type": "string"
+      },
+      "action": {
+        "value": "",
+        "type": "string"
+      },
+      "pretty": {
+        "value": "false",
+        "type": "boolean"
+      }
+    }
+  },
+  {
+    "module": "node-red/XML",
+    "nodeType": "xml",
+    "category": "parser",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "parser-xml.svg",
+    "color": "#DEBD5C",
+    "defaultProperties": [
+      "name",
+      "property",
+      "attr",
+      "chr"
+    ],
+    "functionalSummary": "Converts between an XML string and its JavaScript object representation, in either direction.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "property": {
+        "value": "payload",
+        "type": "string"
+      },
+      "attr": {
+        "value": "",
+        "type": "string"
+      },
+      "chr": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/YAML",
+    "nodeType": "yaml",
+    "category": "parser",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "parser-yaml.svg",
+    "color": "#DEBD5C",
+    "defaultProperties": [
+      "property",
+      "name"
+    ],
+    "functionalSummary": "Converts between a YAML formatted string and its JavaScript object representation, in either direction.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "property": {
+        "value": "payload",
+        "type": "string"
+      },
+      "name": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/split",
+    "nodeType": "split",
+    "category": "sequence",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "split.svg",
+    "color": "#E2D96E",
+    "defaultProperties": [
+      "name",
+      "splt",
+      "spltType",
+      "arraySplt",
+      "arraySpltType",
+      "stream",
+      "addname",
+      "property"
+    ],
+    "functionalSummary": "Splits a message into a sequence of messages.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "splt": {
+        "value": "\\\\n",
+        "type": "string"
+      },
+      "spltType": {
+        "value": "str",
+        "type": "string"
+      },
+      "arraySplt": {
+        "value": "1",
+        "type": "number"
+      },
+      "arraySpltType": {
+        "value": "len",
+        "type": "string"
+      },
+      "stream": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "addname": {
+        "value": "",
+        "type": "string"
+      },
+      "property": {
+        "value": "payload",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/split",
+    "nodeType": "join",
+    "category": "sequence",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "join.svg",
+    "color": "#E2D96E",
+    "defaultProperties": [
+      "name",
+      "mode",
+      "build",
+      "property",
+      "propertyType",
+      "key",
+      "joiner",
+      "joinerType",
+      "useparts",
+      "accumulate",
+      "timeout",
+      "count",
+      "reduceRight",
+      "reduceExp",
+      "reduceInit",
+      "reduceInitType",
+      "reduceFixup"
+    ],
+    "functionalSummary": "Joins sequences of messages into a single message.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "mode": {
+        "value": "auto",
+        "type": "string"
+      },
+      "build": {
+        "value": "object",
+        "type": "string"
+      },
+      "property": {
+        "value": "payload",
+        "type": "string"
+      },
+      "propertyType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "key": {
+        "value": "topic",
+        "type": "string"
+      },
+      "joiner": {
+        "value": "\\\\n",
+        "type": "string"
+      },
+      "joinerType": {
+        "value": "str",
+        "type": "string"
+      },
+      "useparts": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "accumulate": {
+        "value": "false",
+        "type": "string"
+      },
+      "timeout": {
+        "value": "",
+        "type": "string"
+      },
+      "count": {
+        "value": "",
+        "type": "string"
+      },
+      "reduceRight": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "reduceExp": {
+        "value": "undefined",
+        "type": "string"
+      },
+      "reduceInit": {
+        "value": "undefined",
+        "type": "string"
+      },
+      "reduceInitType": {
+        "value": "undefined",
+        "type": "string"
+      },
+      "reduceFixup": {
+        "value": "undefined",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/sort",
+    "nodeType": "sort",
+    "category": "sequence",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "sort.svg",
+    "color": "#E2D96E",
+    "defaultProperties": [
+      "name",
+      "order",
+      "as_num",
+      "target",
+      "targetType",
+      "msgKey",
+      "msgKeyType",
+      "seqKey",
+      "seqKeyType"
+    ],
+    "functionalSummary": "A function that sorts message property or a sequence of messages.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "ascending",
+        "type": "string"
+      },
+      "as_num": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "target": {
+        "value": "payload",
+        "type": "string"
+      },
+      "targetType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "msgKey": {
+        "value": "payload",
+        "type": "string"
+      },
+      "msgKeyType": {
+        "value": "elem",
+        "type": "string"
+      },
+      "seqKey": {
+        "value": "payload",
+        "type": "string"
+      },
+      "seqKeyType": {
+        "value": "msg",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/batch",
+    "nodeType": "batch",
+    "category": "sequence",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "batch.svg",
+    "color": "#E2D96E",
+    "defaultProperties": [
+      "name",
+      "mode",
+      "count",
+      "overlap",
+      "interval",
+      "allowEmptySequence",
+      "honourParts",
+      "topics"
+    ],
+    "functionalSummary": "Creates sequences of messages based on various rules.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "mode": {
+        "value": "count",
+        "type": "string"
+      },
+      "count": {
+        "value": "10",
+        "type": "number"
+      },
+      "overlap": {
+        "value": "0",
+        "type": "number"
+      },
+      "interval": {
+        "value": "10",
+        "type": "number"
+      },
+      "allowEmptySequence": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "honourParts": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "topics": {
+        "value": "[{topic:\"\"",
+        "type": "array"
+      }
+    }
+  },
+  {
+    "module": "node-red/file",
+    "nodeType": "file",
+    "category": "storage",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "file-out.svg",
+    "color": "BurlyWood",
+    "defaultProperties": [
+      "name",
+      "filename",
+      "filenameType",
+      "appendNewline",
+      "createDir",
+      "overwriteFile",
+      "encoding"
+    ],
+    "functionalSummary": "Writes msg.payload to a file, either adding to the end or replacing the existing content. Alternatively, it can delete the file.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "filename": {
+        "value": "",
+        "type": "string"
+      },
+      "filenameType": {
+        "value": "str",
+        "type": "string"
+      },
+      "appendNewline": {
+        "value": "true",
+        "type": "boolean"
+      },
+      "createDir": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "overwriteFile": {
+        "value": "false",
+        "type": "string"
+      },
+      "encoding": {
+        "value": "none",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/file",
+    "nodeType": "file in",
+    "category": "storage",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "file-in.svg",
+    "color": "BurlyWood",
+    "defaultProperties": [
+      "name",
+      "filename",
+      "filenameType",
+      "format",
+      "chunk",
+      "sendError",
+      "encoding",
+      "allProps"
+    ],
+    "functionalSummary": "Reads the contents of a file as either a string or binary buffer.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "filename": {
+        "value": "",
+        "type": "string"
+      },
+      "filenameType": {
+        "value": "str",
+        "type": "string"
+      },
+      "format": {
+        "value": "utf8",
+        "type": "string"
+      },
+      "chunk": {
+        "value": "false",
+        "type": "boolean"
+      },
+      "sendError": {
+        "value": "false",
+        "type": "string"
+      },
+      "encoding": {
+        "value": "none",
+        "type": "string"
+      },
+      "allProps": {
+        "value": "false",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red/watch",
+    "nodeType": "watch",
+    "category": "storage",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "watch.svg",
+    "color": "BurlyWood",
+    "defaultProperties": [
+      "name",
+      "files",
+      "recursive"
+    ],
+    "functionalSummary": "Watches a directory or file for changes.",
+    "version": "4.0.9",
+    "enabled": true,
+    "isCore": true,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "files": {
+        "value": "",
+        "type": "string"
+      },
+      "recursive": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-contrib-openai/openai",
+    "nodeType": "openai",
+    "category": "function",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "icon.png",
+    "color": "#ffffff",
+    "defaultProperties": [
+      "name",
+      "api",
+      "creds"
+    ],
+    "functionalSummary": "Summary of the node.",
+    "version": "1.0.3",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "api": {
+        "value": "",
+        "type": "string"
+      },
+      "creds": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-contrib-openai/openai",
+    "nodeType": "openaiApiKey",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name"
+    ],
+    "functionalSummary": "",
+    "version": "1.0.3",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-chat",
+    "nodeType": "ollama-chat",
+    "category": "AI",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ollama.png",
+    "color": "rgb(186 230 253)",
+    "defaultProperties": [
+      "name",
+      "server",
+      "model",
+      "modelType",
+      "messages",
+      "messagesType",
+      "format",
+      "stream",
+      "keepAlive",
+      "keepAliveType",
+      "tools",
+      "options"
+    ],
+    "functionalSummary": "Generate the next message in a chat with a provided model.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "Ollama Chat",
+        "type": "string"
+      },
+      "server": {
+        "value": "",
+        "type": "string"
+      },
+      "model": {
+        "value": "",
+        "type": "string"
+      },
+      "modelType": {
+        "value": "str",
+        "type": "string"
+      },
+      "messages": {
+        "value": "payload",
+        "type": "string"
+      },
+      "messagesType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "format": {
+        "value": "",
+        "type": "string"
+      },
+      "stream": {
+        "value": "false",
+        "type": "string"
+      },
+      "keepAlive": {
+        "value": "5m",
+        "type": "string"
+      },
+      "keepAliveType": {
+        "value": "str",
+        "type": "string"
+      },
+      "tools": {
+        "value": "",
+        "type": "string"
+      },
+      "options": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-copy",
+    "nodeType": "ollama-copy",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "Copy a model. Creates a model with another name from an existing model.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-create",
+    "nodeType": "ollama-create",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "Create a model from a Modelfile.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-delete",
+    "nodeType": "ollama-delete",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "Delete a model and its data.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-embed",
+    "nodeType": "ollama-embed",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "Generate embeddings from a model",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-generate",
+    "nodeType": "ollama-generate",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "Generate a response for a given prompt with a provided model.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-list",
+    "nodeType": "ollama-list",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "List models that are available locally.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-pull",
+    "nodeType": "ollama-pull",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "Download a model from the ollama library.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-push",
+    "nodeType": "ollama-push",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "Upload a model to a model library. Requires registering for ollama.ai and adding a public key first.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-show",
+    "nodeType": "ollama-show",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "Show information about a model including details, modelfile, template, parameters, license, and system prompt.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-ps",
+    "nodeType": "ollama-ps",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "List models that are currently loaded into memory.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-abort",
+    "nodeType": "ollama-abort",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "This method will abort all streamed generations currently running. All asynchronous threads listening to streams (typically the for await (const part of response)) will throw an AbortError exception.",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-config-server",
+    "nodeType": "ollama-config-server",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-config-format",
+    "nodeType": "ollama-config-format",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-config-tools",
+    "nodeType": "ollama-config-tools",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-contrib-ollama/ollama-config-options",
+    "nodeType": "ollama-config-options",
+    "category": "unknown",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [],
+    "functionalSummary": "",
+    "version": "0.3.0",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {}
+  },
+  {
+    "module": "node-red-dashboard/ui_base",
+    "nodeType": "ui_base",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "theme",
+      "site"
+    ],
+    "functionalSummary": "",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "theme": {
+        "value": "",
+        "type": "string"
+      },
+      "site": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_button",
+    "nodeType": "ui_button",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_button.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "group",
+      "order",
+      "width",
+      "height",
+      "passthru",
+      "label",
+      "tooltip",
+      "color",
+      "bgcolor",
+      "className",
+      "icon",
+      "payload",
+      "payloadType",
+      "topic",
+      "topicType"
+    ],
+    "functionalSummary": "Adds a button to the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "passthru": {
+        "value": "false",
+        "type": "string"
+      },
+      "label": {
+        "value": "button",
+        "type": "string"
+      },
+      "tooltip": {
+        "value": "",
+        "type": "string"
+      },
+      "color": {
+        "value": "",
+        "type": "string"
+      },
+      "bgcolor": {
+        "value": "",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      },
+      "icon": {
+        "value": "",
+        "type": "string"
+      },
+      "payload": {
+        "value": "",
+        "type": "string"
+      },
+      "payloadType": {
+        "value": "str",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_dropdown",
+    "nodeType": "ui_dropdown",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_dropdown.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "label",
+      "tooltip",
+      "place",
+      "group",
+      "order",
+      "width",
+      "height",
+      "passthru",
+      "multiple",
+      "options",
+      "payload",
+      "topic",
+      "topicType",
+      "className"
+    ],
+    "functionalSummary": "Adds a dropdown select box to the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "",
+        "type": "string"
+      },
+      "tooltip": {
+        "value": "",
+        "type": "string"
+      },
+      "place": {
+        "value": "Select option",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "passthru": {
+        "value": "true",
+        "type": "string"
+      },
+      "multiple": {
+        "value": "false",
+        "type": "string"
+      },
+      "options": {
+        "value": "[{value: ''",
+        "type": "array"
+      },
+      "payload": {
+        "value": "",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_switch",
+    "nodeType": "ui_switch",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_switch.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "label",
+      "tooltip",
+      "group",
+      "order",
+      "width",
+      "height",
+      "passthru",
+      "decouple",
+      "topic",
+      "topicType",
+      "style",
+      "onvalue",
+      "onvalueType",
+      "onicon",
+      "oncolor",
+      "offvalue",
+      "offvalueType",
+      "officon",
+      "offcolor",
+      "animate",
+      "className"
+    ],
+    "functionalSummary": "Adds a switch to the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "switch",
+        "type": "string"
+      },
+      "tooltip": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "passthru": {
+        "value": "true",
+        "type": "string"
+      },
+      "decouple": {
+        "value": "false",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "style": {
+        "value": "",
+        "type": "string"
+      },
+      "onvalue": {
+        "value": "{value: true",
+        "type": "string"
+      },
+      "onvalueType": {
+        "value": "bool",
+        "type": "string"
+      },
+      "onicon": {
+        "value": "",
+        "type": "string"
+      },
+      "oncolor": {
+        "value": "",
+        "type": "string"
+      },
+      "offvalue": {
+        "value": "{value: false",
+        "type": "string"
+      },
+      "offvalueType": {
+        "value": "bool",
+        "type": "string"
+      },
+      "officon": {
+        "value": "",
+        "type": "string"
+      },
+      "offcolor": {
+        "value": "",
+        "type": "string"
+      },
+      "animate": {
+        "value": "false",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_slider",
+    "nodeType": "ui_slider",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_slider.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "label",
+      "tooltip",
+      "group",
+      "order",
+      "width",
+      "height",
+      "passthru",
+      "outs",
+      "topic",
+      "topicType",
+      "min",
+      "max",
+      "step",
+      "className"
+    ],
+    "functionalSummary": "Adds a slider widget to the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "slider",
+        "type": "string"
+      },
+      "tooltip": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "passthru": {
+        "value": "true",
+        "type": "string"
+      },
+      "outs": {
+        "value": "all",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "min": {
+        "value": "0",
+        "type": "number"
+      },
+      "max": {
+        "value": "10",
+        "type": "number"
+      },
+      "step": {
+        "value": "1",
+        "type": "number"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_numeric",
+    "nodeType": "ui_numeric",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_numeric.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "label",
+      "tooltip",
+      "group",
+      "order",
+      "width",
+      "height",
+      "wrap",
+      "passthru",
+      "topic",
+      "topicType",
+      "format",
+      "min",
+      "max",
+      "step",
+      "className"
+    ],
+    "functionalSummary": "Adds a numeric input widget to the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "numeric",
+        "type": "string"
+      },
+      "tooltip": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "wrap": {
+        "value": "false",
+        "type": "string"
+      },
+      "passthru": {
+        "value": "true",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "format": {
+        "value": "'{{value",
+        "type": "string"
+      },
+      "min": {
+        "value": "0",
+        "type": "number"
+      },
+      "max": {
+        "value": "10",
+        "type": "number"
+      },
+      "step": {
+        "value": "1",
+        "type": "number"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_text_input",
+    "nodeType": "ui_text_input",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_text.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "label",
+      "tooltip",
+      "group",
+      "order",
+      "width",
+      "height",
+      "passthru",
+      "mode",
+      "delay",
+      "topic",
+      "sendOnBlur",
+      "className",
+      "topicType"
+    ],
+    "functionalSummary": "Adds a text input field to the user interface. Mode can be regular text, email or color picker.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "",
+        "type": "string"
+      },
+      "tooltip": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "passthru": {
+        "value": "true",
+        "type": "string"
+      },
+      "mode": {
+        "value": "text",
+        "type": "string"
+      },
+      "delay": {
+        "value": "300",
+        "type": "number"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "sendOnBlur": {
+        "value": "true",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_date_picker",
+    "nodeType": "ui_date_picker",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_date_picker.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "label",
+      "group",
+      "order",
+      "width",
+      "height",
+      "passthru",
+      "topic",
+      "topicType",
+      "className"
+    ],
+    "functionalSummary": "Adds a date picker widget to the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "date",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "passthru": {
+        "value": "true",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_colour_picker",
+    "nodeType": "ui_colour_picker",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_colour_picker.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "label",
+      "group",
+      "format",
+      "outformat",
+      "showSwatch",
+      "showPicker",
+      "showValue",
+      "showHue",
+      "showAlpha",
+      "showLightness",
+      "square",
+      "dynOutput",
+      "order",
+      "width",
+      "height",
+      "passthru",
+      "topic",
+      "topicType",
+      "className"
+    ],
+    "functionalSummary": "Adds a colour picker to the dashboard.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "format": {
+        "value": "hex",
+        "type": "string"
+      },
+      "outformat": {
+        "value": "string",
+        "type": "string"
+      },
+      "showSwatch": {
+        "value": "true",
+        "type": "string"
+      },
+      "showPicker": {
+        "value": "false",
+        "type": "string"
+      },
+      "showValue": {
+        "value": "false",
+        "type": "string"
+      },
+      "showHue": {
+        "value": "false",
+        "type": "string"
+      },
+      "showAlpha": {
+        "value": "false",
+        "type": "string"
+      },
+      "showLightness": {
+        "value": "true",
+        "type": "string"
+      },
+      "square": {
+        "value": "false",
+        "type": "string"
+      },
+      "dynOutput": {
+        "value": "false",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "passthru": {
+        "value": "true",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_form",
+    "nodeType": "ui_form",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_form.png",
+    "color": "rgb(176, 223, 227)",
+    "defaultProperties": [
+      "name",
+      "label",
+      "group",
+      "order",
+      "width",
+      "height",
+      "options",
+      "formValue",
+      "payload",
+      "submit",
+      "cancel",
+      "topic",
+      "topicType",
+      "splitLayout",
+      "className"
+    ],
+    "functionalSummary": "Adds a form to user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "options": {
+        "value": "[{value:''",
+        "type": "string"
+      },
+      "formValue": {
+        "value": "{",
+        "type": "string"
+      },
+      "payload": {
+        "value": "",
+        "type": "string"
+      },
+      "submit": {
+        "value": "submit",
+        "type": "string"
+      },
+      "cancel": {
+        "value": "cancel",
+        "type": "string"
+      },
+      "topic": {
+        "value": "topic",
+        "type": "string"
+      },
+      "topicType": {
+        "value": "msg",
+        "type": "string"
+      },
+      "splitLayout": {
+        "value": "",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_text",
+    "nodeType": "ui_text",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_text.png",
+    "color": "rgb(119, 198, 204)",
+    "defaultProperties": [
+      "group",
+      "order",
+      "width",
+      "height",
+      "name",
+      "label",
+      "format",
+      "layout",
+      "className",
+      "style",
+      "font",
+      "fontSize",
+      "color"
+    ],
+    "functionalSummary": "Will display a non-editable text field on the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "label": {
+        "value": "text",
+        "type": "string"
+      },
+      "format": {
+        "value": "'{{msg.payload",
+        "type": "string"
+      },
+      "layout": {
+        "value": "row-spread",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      },
+      "style": {
+        "value": "false",
+        "type": "string"
+      },
+      "font": {
+        "value": "",
+        "type": "string"
+      },
+      "fontSize": {
+        "value": "16",
+        "type": "number"
+      },
+      "color": {
+        "value": "#000",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_gauge",
+    "nodeType": "ui_gauge",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_gauge.png",
+    "color": "rgb(119, 198, 204)",
+    "defaultProperties": [
+      "name",
+      "group",
+      "order",
+      "width",
+      "height",
+      "gtype",
+      "title",
+      "label",
+      "format",
+      "min",
+      "max",
+      "colors",
+      "seg1",
+      "seg2",
+      "diff",
+      "className"
+    ],
+    "functionalSummary": "Adds a gauge type widget to the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "gtype": {
+        "value": "gage",
+        "type": "string"
+      },
+      "title": {
+        "value": "gauge",
+        "type": "string"
+      },
+      "label": {
+        "value": "units",
+        "type": "string"
+      },
+      "format": {
+        "value": "'{{value",
+        "type": "string"
+      },
+      "min": {
+        "value": "0",
+        "type": "number"
+      },
+      "max": {
+        "value": "10",
+        "type": "number"
+      },
+      "colors": {
+        "value": "[\"#00B500\"",
+        "type": "string"
+      },
+      "seg1": {
+        "value": "",
+        "type": "string"
+      },
+      "seg2": {
+        "value": "",
+        "type": "string"
+      },
+      "diff": {
+        "value": "false",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_chart",
+    "nodeType": "ui_chart",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_chart.png",
+    "color": "rgb(119, 198, 204)",
+    "defaultProperties": [
+      "name",
+      "group",
+      "order",
+      "width",
+      "height",
+      "label",
+      "chartType",
+      "legend",
+      "xformat",
+      "interpolate",
+      "nodata",
+      "dot",
+      "ymin",
+      "ymax",
+      "removeOlder",
+      "removeOlderPoints",
+      "removeOlderUnit",
+      "cutout",
+      "useOneColor",
+      "useUTC",
+      "colors",
+      "outputs",
+      "useDifferentColor",
+      "className"
+    ],
+    "functionalSummary": "Plots the input values on a chart. This can either be a time based line chart, a bar chart (vertical or horizontal), or a pie chart.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "label": {
+        "value": "chart",
+        "type": "string"
+      },
+      "chartType": {
+        "value": "line",
+        "type": "string"
+      },
+      "legend": {
+        "value": "false",
+        "type": "string"
+      },
+      "xformat": {
+        "value": "HH:mm:ss",
+        "type": "string"
+      },
+      "interpolate": {
+        "value": "linear",
+        "type": "string"
+      },
+      "nodata": {
+        "value": "",
+        "type": "string"
+      },
+      "dot": {
+        "value": "false",
+        "type": "string"
+      },
+      "ymin": {
+        "value": "",
+        "type": "string"
+      },
+      "ymax": {
+        "value": "",
+        "type": "string"
+      },
+      "removeOlder": {
+        "value": "1",
+        "type": "number"
+      },
+      "removeOlderPoints": {
+        "value": "",
+        "type": "string"
+      },
+      "removeOlderUnit": {
+        "value": "3600",
+        "type": "string"
+      },
+      "cutout": {
+        "value": "0",
+        "type": "number"
+      },
+      "useOneColor": {
+        "value": "false",
+        "type": "string"
+      },
+      "useUTC": {
+        "value": "false",
+        "type": "string"
+      },
+      "colors": {
+        "value": "['#1F77B4'",
+        "type": "string"
+      },
+      "outputs": {
+        "value": "1",
+        "type": "number"
+      },
+      "useDifferentColor": {
+        "value": "false",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_audio",
+    "nodeType": "ui_audio",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "feed.png",
+    "color": "rgb(119, 198, 204)",
+    "defaultProperties": [
+      "name",
+      "group",
+      "voice",
+      "always"
+    ],
+    "functionalSummary": "Plays audio or text to speech (TTS) in the dashboard.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "voice": {
+        "value": "",
+        "type": "string"
+      },
+      "always": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_toast",
+    "nodeType": "ui_toast",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_toast.png",
+    "color": "rgb(119, 198, 204)",
+    "defaultProperties": [
+      "position",
+      "displayTime",
+      "highlight",
+      "sendall",
+      "outputs",
+      "ok",
+      "cancel",
+      "raw",
+      "className",
+      "topic",
+      "name"
+    ],
+    "functionalSummary": "Shows msg.payload as a popup notification or OK / Cancel dialog message on the user interface.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "position": {
+        "value": "top right",
+        "type": "string"
+      },
+      "displayTime": {
+        "value": "3",
+        "type": "string"
+      },
+      "highlight": {
+        "value": "",
+        "type": "string"
+      },
+      "sendall": {
+        "value": "true",
+        "type": "string"
+      },
+      "outputs": {
+        "value": "0",
+        "type": "number"
+      },
+      "ok": {
+        "value": "OK",
+        "type": "string"
+      },
+      "cancel": {
+        "value": "",
+        "type": "string"
+      },
+      "raw": {
+        "value": "false",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      },
+      "topic": {
+        "value": "",
+        "type": "string"
+      },
+      "name": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_ui_control",
+    "nodeType": "ui_ui_control",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_link.png",
+    "color": "rgb( 63, 173, 181)",
+    "defaultProperties": [
+      "name",
+      "events"
+    ],
+    "functionalSummary": "Allows dynamic control of the Dashboard.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "events": {
+        "value": "all",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_template",
+    "nodeType": "ui_template",
+    "category": "unknown",
+    "inputs": 1,
+    "outputs": 1,
+    "icon": "ui_template.png",
+    "color": "rgb( 63, 173, 181)",
+    "defaultProperties": [
+      "group",
+      "name",
+      "order",
+      "width",
+      "height",
+      "format",
+      "storeOutMessages",
+      "fwdInMessages",
+      "resendOnRefresh",
+      "templateScope",
+      "className"
+    ],
+    "functionalSummary": "The template widget can contain any valid html and Angular/Angular-Material directives.",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "name": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "format": {
+        "value": "<div ng-bind-html=\"msg.payload\"></div>",
+        "type": "string"
+      },
+      "storeOutMessages": {
+        "value": "true",
+        "type": "string"
+      },
+      "fwdInMessages": {
+        "value": "true",
+        "type": "string"
+      },
+      "resendOnRefresh": {
+        "value": "true",
+        "type": "string"
+      },
+      "templateScope": {
+        "value": "local",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_link",
+    "nodeType": "ui_link",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "ui_link.png",
+    "color": "rgb( 63, 173, 181)",
+    "defaultProperties": [
+      "name",
+      "link",
+      "icon",
+      "target",
+      "order",
+      "className"
+    ],
+    "functionalSummary": "The Icon can be defined, as either a Material Design icon (e.g. 'check', 'close') or a Font Awesome icon (e.g. 'fa-fire'), or a Weather icon. You can use the full set of google material icons if you a",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "right",
+    "defaults": {
+      "name": {
+        "value": "Google",
+        "type": "string"
+      },
+      "link": {
+        "value": "https://www.google.com",
+        "type": "string"
+      },
+      "icon": {
+        "value": "open_in_browser",
+        "type": "string"
+      },
+      "target": {
+        "value": "newtab",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_tab",
+    "nodeType": "ui_tab",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "icon",
+      "order",
+      "disabled",
+      "hidden"
+    ],
+    "functionalSummary": "Tab configuration for Dashboard",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "c_ui_tab(\"label.home\")",
+        "type": "string"
+      },
+      "icon": {
+        "value": "dashboard",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "disabled": {
+        "value": "false",
+        "type": "string"
+      },
+      "hidden": {
+        "value": "false",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_group",
+    "nodeType": "ui_group",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "node.svg",
+    "color": "#ddd",
+    "defaultProperties": [
+      "name",
+      "tab",
+      "order",
+      "disp",
+      "width",
+      "collapse",
+      "disabled",
+      "hidden",
+      "className"
+    ],
+    "functionalSummary": "Group",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "c_ui_group(\"label.default\")",
+        "type": "string"
+      },
+      "tab": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "disp": {
+        "value": "true",
+        "type": "string"
+      },
+      "width": {
+        "value": "6",
+        "type": "number"
+      },
+      "collapse": {
+        "value": "false",
+        "type": "string"
+      },
+      "disabled": {
+        "value": "false",
+        "type": "string"
+      },
+      "hidden": {
+        "value": "false",
+        "type": "string"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  },
+  {
+    "module": "node-red-dashboard/ui_spacer",
+    "nodeType": "ui_spacer",
+    "category": "config",
+    "inputs": 0,
+    "outputs": 1,
+    "icon": "ui_spacer.png",
+    "color": "#D4F0F8",
+    "defaultProperties": [
+      "name",
+      "group",
+      "order",
+      "width",
+      "height",
+      "className"
+    ],
+    "functionalSummary": "If a Class is specified, it will be added to the parent card. This way you can style the card and the elements inside it with custom CSS. The Class can be set at runtime by setting a msg.className str",
+    "version": "3.6.5",
+    "enabled": true,
+    "isCore": false,
+    "hasButton": false,
+    "hasStatus": false,
+    "align": "left",
+    "defaults": {
+      "name": {
+        "value": "spacer",
+        "type": "string"
+      },
+      "group": {
+        "value": "",
+        "type": "string"
+      },
+      "order": {
+        "value": "0",
+        "type": "number"
+      },
+      "width": {
+        "value": "0",
+        "type": "number"
+      },
+      "height": {
+        "value": "0",
+        "type": "number"
+      },
+      "className": {
+        "value": "",
+        "type": "string"
+      }
+    }
+  }
+]
